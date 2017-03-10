@@ -1,0 +1,62 @@
+{
+  "name": "8a60ae0c43c950358aef2401e81748f9",
+  "version": "0.0.1",
+  "description": "An POC test",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "eslint": "eslint --ignore-path .npmignore **/*.js index.js --quiet",
+    "david": "david",
+    "mocha": "mocha --reporter spec",
+    "cover": "nyc --check-coverage --statements 100 --branchs 100 --lines 100 --functions 100 --reporter=lcov npm run mocha",
+    "test": "npm run eslint && npm run david && npm run cover",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "preversion": "git pull && rm -rf ./node_modules/ && npm install && npm test",
+    "postversion": "git push && npm publish --access=public && git push --tags"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanmuniz/8a60ae0c43c950358aef2401e81748f9.git"
+  },
+  "keywords": [
+    "api",
+    "boilerplate"
+  ],
+  "author": "Luan Muniz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luanmuniz/8a60ae0c43c950358aef2401e81748f9/issues"
+  },
+  "homepage": "https://github.com/luanmuniz/8a60ae0c43c950358aef2401e81748f9#readme",
+  "devDependencies": {
+    "babel-eslint": "7.1.1",
+    "chai": "3.5.0",
+    "david": "11.0.0",
+    "eslint": "3.17.1",
+    "mocha": "3.2.0",
+    "nyc": "^10.1.2",
+    "pre-commit": "1.2.2",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "http-status-codes": "1.1.6",
+    "joi": "10.2.2",
+    "koa": "2.1.0",
+    "koa-bodyparser": "4.1.0",
+    "koa-compress": "2.0.0",
+    "koa-helmet": "3.1.0",
+    "koa-route": "3.2.0",
+    "stripe": "4.15.1"
+  }
+}
