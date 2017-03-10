@@ -9,9 +9,9 @@ Create a new customer - To more information check [Stripe API](https://stripe.co
 
 #### Params
 
-`metadata.id` - `Required` - user ID
-`card.number` - `Required` - Creditcard Number
-`card.exp_month` - `Required` - Creditcard expiration Month, number from 01 to 12
+`metadata.id` - `Required` - user ID<br>
+`card.number` - `Required` - Creditcard Number<br>
+`card.exp_month` - `Required` - Creditcard expiration Month, number from 01 to 12<br>
 `card.exp_year` - `Required` - Creditcard expiration Year, must be at leats current year
 
 #### Example
@@ -33,8 +33,8 @@ Create a new charge for a customer - To more information check [Stripe API](http
 
 #### Params
 
-`amount` - `Required` - the Amout to be charged in cents
-`currency` - `Optional` - Default: `usd` - The currency of the charge
+`amount` - `Required` - the Amout to be charged in cents<br>
+`currency` - `Optional` - Default: `usd` - The currency of the charge<br>
 `customer` - `Required` - Customer ID from stripe
 
 #### Example
@@ -51,7 +51,7 @@ Create a new charge for a customer - To more information check [Stripe API](http
 
 #### Params
 
-`customer` - `Required` - Customer ID from stripe
+`customer` - `Required` - Customer ID from stripe<br>
 `limit` - `Optional` - Default: `10` - The max number of charges in the request
 
 #### Example
